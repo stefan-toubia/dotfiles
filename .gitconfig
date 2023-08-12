@@ -1,0 +1,49 @@
+[core]
+excludesfile = ~/.gitignore_global
+pager = less -+FX
+[user]
+name = Stefan Toubia
+email = stefan.toubia@gmail.com
+[diff]
+tool = vimdiff
+[branch]
+autosetuprebase = always
+[push]
+default = current
+[pull]
+rebase = true
+[alias]
+a = add
+aa = add -A
+alias = "!git config --get-regexp '^alias\\.' | sort"
+b = branch
+blo = !~/script/git/branch-list-recent.sh
+c = commit
+cam = commit --amend
+can = commit --amend --no-edit
+co = checkout
+cob = checkout -b
+confe = "!code ~/.gitconfig;"
+cp = cherry-pick
+d = diff
+dc = diff --cached
+dt = diff --text
+dct = diff --cached --text
+fm = fetch origin main:main
+l = log
+lol = log --oneline --graph --decorate
+ls = log --stat
+pb = push -u origin
+pf = push --force-with-lease
+rb = rebase
+rba = rebase --abort
+rbc = rebase --continue
+rbi = rebase --interactive
+s = status --short --branch --ignore-submodules=untracked
+sn = s --untracked=no
+sl = "!git -c color.status=always status | less -R;"
+[status]
+showUntrackedFiles = all
+
+[include]
+path = ~/.gitconfig_work

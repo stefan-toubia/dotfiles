@@ -5,7 +5,7 @@ repo="$(realpath $(dirname $BASH_SOURCE[0]))"
 
 echo "Linking dotfiles from ${repo}"
 
-echo "linking ~/.gitconfig"
+ln -s "${repo}/.zshrc" ~/.zshrc
 ln -sf "${repo}/.gitconfig" ~/.gitconfig
 
 mkdir -p ~/script

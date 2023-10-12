@@ -8,7 +8,7 @@ function source_if() {
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="amuse"
 HYPHEN_INSENSITIVE="true"
-zstyle ':omz:update' mode reminder # just remind me to update when it's time
+zstyle ':omz:update' mode reminder
 # ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -39,8 +39,6 @@ function repeat_command() {
   done
 }
 
-source_if ~/.fzf.zsh
-
 if [[ "$(uname)" == "Darwin" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ "$(uname)" == "Linux" ]]; then
@@ -49,4 +47,5 @@ fi
 
 source_if ~/gh/alias.sh
 
-source_if ~/.zshrc.work
+source_if ~/.fzf.zsh
+source_if ~/.work.zshrc

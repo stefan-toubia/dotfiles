@@ -17,11 +17,12 @@ a = add
 aa = add -A
 alias = "!git config --get-regexp '^alias\\.' | sort"
 b = branch
-blo = !~/script/git/branch-list-recent.sh
+blr = !~/script/git/branch-list-recent.sh
 c = commit
 cam = commit --amend
 can = commit --amend --no-edit
 co = checkout
+cor = "!git co $(git blr)"
 cob = checkout -b
 confe = "!code ~/.gitconfig;"
 cp = cherry-pick
@@ -29,10 +30,12 @@ d = diff
 dc = diff --cached
 dt = diff --text
 dct = diff --cached --text
+dm = diff master
 fm = fetch origin main:main
 l = log
 lol = log --oneline --graph --decorate
 ls = log --stat
+p = push
 pb = push -u origin
 pf = push --force-with-lease
 rb = rebase
@@ -42,6 +45,7 @@ rbi = rebase --interactive
 s = status --short --branch --ignore-submodules=untracked
 sn = s --untracked=no
 sl = "!git -c color.status=always status | less -R;"
+rpc = "!f() { git rev-parse \"${1:-HEAD}\" | tee /dev/tty | pbcopy; }; f"
 [status]
 showUntrackedFiles = all
 

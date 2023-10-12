@@ -5,13 +5,26 @@ repo="$(realpath $(dirname $BASH_SOURCE[0]))"
 
 echo "Linking dotfiles from ${repo}"
 
-ln -s "${repo}/.zshrc" ~/.zshrc
-ln -sf "${repo}/.gitconfig" ~/.gitconfig
+function link() {
+  local source="$1"
+  local target="$2"
+
+  if [ -h "${target}" ]; then
+    return
+  elif [ ! -e "${target}" ]; then
+    mkdir -p "$(dirname $dst)"
+    echo "linking ${dst}"
+    ln -s "${source}" "${target}"
+  else
+    echo "${target} exists but is not a symlink"
+  fi
+}
+
+link "${repo}/.zshrc" ~/.zshrc
+link "${repo}/.gitconfig" ~/.gitconfig
 
 mkdir -p ~/script
 for f in $(find ${repo}/script -type f); do
   dst="${f/"${repo}"/$HOME}"
-  echo "linking ${dst}"
-  mkdir -p "$(dirname $dst)"
-  ln -sf "${f}" "${dst}"
+  link "${f}" "${dst}"
 done

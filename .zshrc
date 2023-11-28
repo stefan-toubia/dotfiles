@@ -29,16 +29,6 @@ alias tns='tmux new-session -A -s'
 
 alias display-swap="~/script/display_swap.sh"
 
-function repeat_command() {
-  n="$1"
-  shift
-  cmd="$@"
-
-  for i in {1.."${n}"}; do
-    eval "${cmd}"
-  done
-}
-
 if [[ "$(uname)" == "Darwin" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ "$(uname)" == "Linux" ]]; then

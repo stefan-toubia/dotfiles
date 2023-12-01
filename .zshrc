@@ -35,8 +35,6 @@ elif [[ "$(uname)" == "Linux" ]]; then
   # TODO
 fi
 
-source_if ~/gh/alias.sh
-
 source_if ~/.fzf.zsh
 source_if ~/.work.zshrc
 

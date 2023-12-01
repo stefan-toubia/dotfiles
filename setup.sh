@@ -23,6 +23,12 @@ function link() {
 link "${repo}/.zshrc" ~/.zshrc
 link "${repo}/.gitconfig" ~/.gitconfig
 
+mkdir -p ~/.config
+for f in $(find ${repo}/.config -type f); do
+  dst="${f/"${repo}"/$HOME}"
+  link "${f}" "${dst}"
+done
+
 mkdir -p ~/script
 for f in $(find ${repo}/script -type f); do
   dst="${f/"${repo}"/$HOME}"

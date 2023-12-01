@@ -45,7 +45,9 @@ rbi = rebase --interactive
 s = status --short --branch --ignore-submodules=untracked
 sn = s --untracked=no
 sl = "!git -c color.status=always status | less -R;"
-rpc = "!f() { git rev-parse \"${1:-HEAD}\" | tee /dev/tty | pbcopy; }; f"
+# Print the commit hash and message, and copy the commit hash to the clipboard.
+rpc = "!f() { git --no-pager log -1 --format='%H%n%B' \"${1:-HEAD}\" | tee /dev/tty | head -n 1 | pbcopy; }; f"
+
 [status]
 showUntrackedFiles = all
 

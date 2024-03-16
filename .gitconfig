@@ -15,10 +15,13 @@ rebase = true
 [alias]
 a = add
 aa = add -A
-alias = "!git config --get-regexp '^alias\\.' | sort"
+# List aliases with fzf and run selected alias.
+alias = "!git config --get-regexp '^alias\\.' | sort | fzf | awk '{ print $1 }' | cut -d "." -f 2 | xargs git"
 b = branch
 blr = !~/script/git/branch-list-recent.sh
+bn = rev-parse --abbrev-ref HEAD
 c = commit
+cm = commit -m
 cam = commit --amend
 can = commit --amend --no-edit
 co = checkout
@@ -28,10 +31,12 @@ confe = "!code ~/.gitconfig;"
 cp = cherry-pick
 d = diff
 dc = diff --cached
+ds = diff --stat
 dt = diff --text
 dct = diff --cached --text
 dm = diff master
 fm = fetch origin main:main
+fork = "!git cob \"stefan.$(git bn)\""
 l = log
 lol = log --oneline --graph --decorate
 ls = log --stat
@@ -42,11 +47,13 @@ rb = rebase
 rba = rebase --abort
 rbc = rebase --continue
 rbi = rebase --interactive
+re = restore
+res = restore --staged
+# Print the commit hash and message, and copy the commit hash to the clipboard.
+rpc = "!f() { git --no-pager log -1 --format='%H%n%B' \"${1:-HEAD}\" | tee /dev/tty | head -n 1 | pbcopy; }; f"
 s = status --short --branch --ignore-submodules=untracked
 sn = s --untracked=no
 sl = "!git -c color.status=always status | less -R;"
-# Print the commit hash and message, and copy the commit hash to the clipboard.
-rpc = "!f() { git --no-pager log -1 --format='%H%n%B' \"${1:-HEAD}\" | tee /dev/tty | head -n 1 | pbcopy; }; f"
 
 [status]
 showUntrackedFiles = all

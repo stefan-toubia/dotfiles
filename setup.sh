@@ -12,8 +12,8 @@ function link() {
   if [ -h "${target}" ]; then
     return
   elif [ ! -e "${target}" ]; then
-    mkdir -p "$(dirname $dst)"
-    echo "linking ${dst}"
+    mkdir -p "$(dirname ${target})"
+    echo "linking ${target}"
     ln -s "${source}" "${target}"
   else
     echo "${target} exists but is not a symlink"

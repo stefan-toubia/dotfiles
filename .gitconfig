@@ -37,6 +37,7 @@ dct = diff --cached --text
 dm = diff master
 fm = fetch origin main:main
 fork = "!git cob \"stefan.$(git bn)\""
+go-version = !~/script/git/go-dev-version.sh
 l = log
 lol = log --oneline --graph --decorate
 ls = log --stat

@@ -1,6 +1,7 @@
 [core]
 excludesfile = ~/.gitignore_global
-pager = less -+FX
+untrackedcache = true
+fsmonitor = true
 [user]
 name = Stefan Toubia
 email = stefan.toubia@gmail.com
@@ -18,12 +19,14 @@ aa = add -A
 # List aliases with fzf and run selected alias.
 alias = "!git config --get-regexp '^alias\\.' | sort | fzf | awk '{ print $1 }' | cut -d "." -f 2 | xargs git"
 b = branch
-blr = !~/script/git/branch-list-recent.sh
+blr = "!~/script/git/branch-list-recent.sh | fzf --no-sort"
+branch-last = "!~/script/git/branch-list-recent.sh | head -n 1"
 bn = rev-parse --abbrev-ref HEAD
 c = commit
 cm = commit -m
 cam = commit --amend
 can = commit --amend --no-edit
+check-clean-push = "!~/script/git/check-clean-push.sh"
 co = checkout
 cor = "!git co $(git blr)"
 cob = checkout -b
@@ -41,6 +44,8 @@ go-version = !~/script/git/go-dev-version.sh
 l = log
 lol = log --oneline --graph --decorate
 ls = log --stat
+lss = ls --pretty=format:'%h %ad %s' --date=short
+mbh = "!git merge-base HEAD master"
 p = push
 pb = push -u origin
 pf = push --force-with-lease
@@ -48,10 +53,15 @@ rb = rebase
 rba = rebase --abort
 rbc = rebase --continue
 rbi = rebase --interactive
+rbib = "!git rbi $(git mbh)"
+rbir = "!git rbi $(git blr)"
 re = restore
 res = restore --staged
+resho = "!git reset --hard origin/$(git bn)"
+ressh = "reset --soft HEAD~"
+rph = "!f() { git rev-parse ${1:-HEAD}; }; f"
 # Print the commit hash and message, and copy the commit hash to the clipboard.
-rpc = "!f() { git --no-pager log -1 --format='%H%n%B' \"${1:-HEAD}\" | tee /dev/tty | head -n 1 | pbcopy; }; f"
+rpc = "!f() { git --no-pager log -1 --format='%h%n%B' \"${1:-HEAD}\" | tee /dev/tty | head -n 1 | pbcopy; }; f"
 s = status --short --branch --ignore-submodules=untracked
 sn = s --untracked=no
 sl = "!git -c color.status=always status | less -R;"
@@ -61,3 +71,7 @@ showUntrackedFiles = all
 
 [include]
 path = ~/.gitconfig_work
+[maintenance]
+auto = true
+[oh-my-zsh]
+hide-dirty = 1

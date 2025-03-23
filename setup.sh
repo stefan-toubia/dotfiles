@@ -10,7 +10,12 @@ function link() {
   local target="$2"
 
   if [ -h "${target}" ]; then
-    return
+    if [ "$(readlink "${target}")" == "${source}" ]; then
+      return
+    else
+      echo "${target} is a symlink to a different file"
+      return
+    fi
   elif [ ! -e "${target}" ]; then
     mkdir -p "$(dirname ${target})"
     echo "linking ${target}"
@@ -24,9 +29,9 @@ link "${repo}/.zshrc" ~/.zshrc
 link "${repo}/.gitconfig" ~/.gitconfig
 
 mkdir -p ~/.config
-for f in $(find ${repo}/.config -type f); do
-  dst="${f/"${repo}"/$HOME}"
-  link "${f}" "${dst}"
+for d in $(find ${repo}/.config -mindepth 1 -maxdepth 1 -type d); do
+  dst="${d/"${repo}"/$HOME}"
+  link "${d}" "${dst}"
 done
 
 mkdir -p ~/script

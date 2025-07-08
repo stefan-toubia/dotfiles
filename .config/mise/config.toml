@@ -10,6 +10,7 @@ pnpm = "10"
 ripgrep = "latest"
 tmux = "latest"
 usage = "latest"
+zoxide = "latest"
 
 [settings]
 experimental = true

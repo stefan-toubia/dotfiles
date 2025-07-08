@@ -39,3 +39,10 @@ for f in $(find ${repo}/script -type f); do
   dst="${f/"${repo}"/$HOME}"
   link "${f}" "${dst}"
 done
+
+# Configure some tools
+
+# Ripgrep completion
+dir="$HOME/.zsh-complete"
+mkdir -p "$dir"
+rg --generate complete-zsh > "$dir/_rg"

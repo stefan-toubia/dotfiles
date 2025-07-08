@@ -1,8 +1,14 @@
 export EDITOR="code --wait"
 
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+
 function source_if() {
   [[ -f "$1" ]] && source "$1"
 }
+
+source_if ~/.env
 
 # -x2: Use 2 spaces for tabs
 # -R: Allow ANSI color escape sequences
@@ -19,13 +25,14 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
-plugins=(aws fasd git gh ripgrep tmux zsh-vi-mode virtualenv)
+plugins=(aws git gh tmux zsh-vi-mode virtualenv zoxide)
 
 source_if $ZSH/oh-my-zsh.sh
 
 ### Aliases
 
-alias zshrc="code ~/.zshrc"
+alias code="cursor"
+alias zshrc="code $(readlink ~/.zshrc)"
 alias ohmyzsh="code ~/.oh-my-zsh"
 
 alias lr='ls -R'
@@ -40,19 +47,26 @@ alias tns='tmux new-session -A -s'
 alias display-swap="~/script/display_swap.sh"
 alias tigs="tig status"
 
+# Other tools
+
 if [[ "$(uname)" == "Darwin" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+  eval "$(brew shellenv)"
   # Enable key repeating in VSCode for VSCodeVim
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+  defaults write -app Cursor ApplePressAndHoldEnabled -bool false
   alias preview='open -a Preview'
 elif [[ "$(uname)" == "Linux" ]]; then
   # TODO
 fi
 
+eval "$(mise activate zsh)"
+
 source <(fzf --zsh)
 alias fzfns="fzf --no-sort"
 alias fzfp="fzf --preview 'bat --color=always {}'"
 alias fzfpe='code $(fzfp)'
+
+fpath=($HOME/.zsh-complete $fpath)
 
 source_if ~/.work.zshrc
 

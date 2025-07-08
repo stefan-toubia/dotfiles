@@ -1,0 +1,15 @@
+[tools]
+biome = "2"
+claude = "latest"
+fzf = "latest"
+gh = "latest"
+go = "1.24"
+jq = "latest"
+node = "22"
+pnpm = "10"
+ripgrep = "latest"
+tmux = "latest"
+usage = "latest"
+
+[settings]
+experimental = true

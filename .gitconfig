@@ -24,6 +24,7 @@ branch-last = "!~/script/git/branch-list-recent.sh | head -n 1"
 bn = rev-parse --abbrev-ref HEAD
 c = commit
 cm = commit -m
+cs = "!~/script/git/commit-select.sh"
 cam = commit --amend
 can = commit --amend --no-edit
 check-clean-push = "!~/script/git/check-clean-push.sh"

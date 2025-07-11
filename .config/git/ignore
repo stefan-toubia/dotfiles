@@ -1,0 +1,6 @@
+.cursor
+.env
+.env.*
+.vscode
+**/.claude/settings.local.json
+node_modules

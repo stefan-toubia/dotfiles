@@ -22,7 +22,6 @@ HYPHEN_INSENSITIVE="true"
 zstyle ':omz:update' mode reminder
 # ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
 plugins=(aws git gh tmux zsh-vi-mode virtualenv zoxide)
@@ -37,6 +36,8 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 
 alias lr='ls -R'
 alias aliasf="alias | fzf"
+alias copyprint="tee >(pbcopy)"
+alias copyprintr="tee >(tr -d '\n' | pbcopy)"
 
 # ohmyzsh tmux plugin provided aliases:
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
@@ -65,6 +66,7 @@ source <(fzf --zsh)
 alias fzfns="fzf --no-sort"
 alias fzfp="fzf --preview 'bat --color=always {}'"
 alias fzfpe='code $(fzfp)'
+alias fzfc='fzf | copyprintr'
 
 fpath=($HOME/.zsh-complete $fpath)
 

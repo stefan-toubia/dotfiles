@@ -1,10 +1,16 @@
 [core]
-excludesfile = ~/.gitignore_global
 untrackedcache = true
 fsmonitor = true
+tabwidth = 2
 [user]
 name = Stefan Toubia
 email = stefan.toubia@gmail.com
+[credential "https://github.com"]
+helper =
+helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+helper =
+helper = !/usr/local/bin/gh auth git-credential
 [diff]
 tool = vimdiff
 [branch]
@@ -22,6 +28,7 @@ aa = add -A
 alias = "!git config --get-regexp '^alias\\.' | sort | fzf | awk '{ print $1 }' | cut -d "." -f 2 | xargs git"
 b = branch
 blr = "!~/script/git/branch-list-recent.sh | fzf --no-sort"
+blp = "!~/script/git/branch-list-recent.sh | fzf --no-sort --preview 'git ls --graph --decorate --color=always {}'"
 branch-last = "!~/script/git/branch-list-recent.sh | head -n 1"
 bn = rev-parse --abbrev-ref HEAD
 c = commit
@@ -33,7 +40,7 @@ check-clean-push = "!~/script/git/check-clean-push.sh"
 co = checkout
 cor = "!git co $(git blr)"
 cob = checkout -b
-confe = "!$EDITOR ~/.gitconfig;"
+confe = "!$EDITOR $(readlink ~/.gitconfig);"
 cp = cherry-pick
 d = diff
 dc = diff --cached
@@ -77,4 +84,7 @@ path = ~/.gitconfig_work
 [maintenance]
 auto = true
 [oh-my-zsh]
-hide-dirty = 1
+hide-dirty = 0
+
+[tig]
+tab-size = 2

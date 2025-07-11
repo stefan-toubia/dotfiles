@@ -13,6 +13,8 @@ autosetuprebase = always
 default = current
 [pull]
 rebase = true
+[rebase]
+forkPoint = true
 [alias]
 a = add
 aa = add -A
@@ -31,7 +33,7 @@ check-clean-push = "!~/script/git/check-clean-push.sh"
 co = checkout
 cor = "!git co $(git blr)"
 cob = checkout -b
-confe = "!code ~/.gitconfig;"
+confe = "!$EDITOR ~/.gitconfig;"
 cp = cherry-pick
 d = diff
 dc = diff --cached

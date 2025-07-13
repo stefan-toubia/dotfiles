@@ -42,6 +42,24 @@ function setup_completions() {
 	fi
 }
 
+# Install zsh plugins
+function setup_zsh_plugins() {
+	echo "Setting up zsh plugins..."
+
+	local plugin_dir="$HOME/.config/zsh-plugins"
+	mkdir -p "$plugin_dir"
+
+	# Install zsh-autosuggestions
+	if [ ! -d "$plugin_dir/zsh-autosuggestions" ]; then
+		git clone https://github.com/zsh-users/zsh-autosuggestions "$plugin_dir/zsh-autosuggestions"
+	fi
+
+	# Install zsh-syntax-highlighting
+	if [ ! -d "$plugin_dir/zsh-syntax-highlighting" ]; then
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$plugin_dir/zsh-syntax-highlighting"
+	fi
+}
+
 # Configure macOS-specific settings
 function setup_macos_config() {
 	if [[ "$(uname)" != "Darwin" ]]; then
@@ -82,6 +100,7 @@ function link_dotfiles() {
 
 function main() {
 	setup_completions
+	setup_zsh_plugins
 	setup_macos_config
 	link_dotfiles
 	echo "Setup complete!"

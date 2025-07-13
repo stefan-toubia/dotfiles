@@ -3,4 +3,5 @@
 .env.*
 .vscode
 **/.claude/settings.local.json
+**/mise.local.toml
 node_modules

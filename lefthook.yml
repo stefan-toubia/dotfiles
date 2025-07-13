@@ -3,3 +3,5 @@ pre-commit:
   jobs:
     - run: shfmt -w {staged_files}
       glob: "*.{sh,zsh,zshrc}"
+    - run: biome check --fix {staged_files}
+      glob: "*.{js,json,ts}"

@@ -25,6 +25,13 @@ function link() {
 	fi
 }
 
+function setup_starship() {
+	echo "Setting up starship..."
+	if ! command -v starship &>/dev/null; then
+		curl -sS https://starship.rs/install.sh | sh
+	fi
+}
+
 # Set up shell completions
 function setup_completions() {
 	echo "Setting up shell completions..."
@@ -99,6 +106,7 @@ function link_dotfiles() {
 }
 
 function main() {
+	setup_starship
 	setup_completions
 	setup_zsh_plugins
 	setup_macos_config

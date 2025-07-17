@@ -1,11 +1,13 @@
 [tools]
 biome = "2"
 claude = "latest"
+delta = "latest"
 fzf = "latest"
 gh = "latest"
 go = "1.24"
 "go:github.com/cespare/reflex" = "latest"
 jq = "latest"
+lazygit = "latest"
 node = "22"
 pnpm = "10"
 ripgrep = "latest"

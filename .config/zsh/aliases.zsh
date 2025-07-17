@@ -4,6 +4,8 @@
 alias code="cursor"
 alias zshrc="code $(readlink ~/.zshrc)"
 
+alias lg="lazygit"
+
 # File operations
 alias la='ls -la'
 alias ll='ls -l'

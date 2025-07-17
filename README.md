@@ -2,14 +2,14 @@
 
 ## Starship - prompt
 
-https://starship.rs/
+<https://starship.rs/>
 
 ## Fonts
 
-https://www.nerdfonts.com/
+<https://www.nerdfonts.com/>
 
 ## Tools
 
 ### Mise - package manager
 
-https://mise.jdx.dev/
+<https://mise.jdx.dev/>

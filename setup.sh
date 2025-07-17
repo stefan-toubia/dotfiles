@@ -89,6 +89,7 @@ function link_dotfiles() {
 	link "${repo}/.gitconfig" ~/.gitconfig
 	link "${repo}/.zprofile" ~/.zprofile
 	link "${repo}/.zshrc" ~/.zshrc
+	link "${repo}/biome.json" ~/biome.json
 
 	# Link .config directory contents
 	mkdir -p ~/.config

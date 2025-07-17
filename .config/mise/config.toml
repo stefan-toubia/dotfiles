@@ -1,5 +1,5 @@
 [tools]
-biome = "2"
+biome = "2.1.1"
 claude = "latest"
 delta = "latest"
 fzf = "latest"

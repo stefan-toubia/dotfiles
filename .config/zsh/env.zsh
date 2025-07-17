@@ -1,5 +1,6 @@
 # Environment variables and PATH setup
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="cursor --wait"
 
 # Base PATH additions

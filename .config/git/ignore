@@ -2,6 +2,5 @@
 .env
 .env.*
 .vscode
-**/.claude/settings.local.json
-**/mise.local.toml
+**/*.local.*
 node_modules

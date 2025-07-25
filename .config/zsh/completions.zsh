@@ -13,7 +13,11 @@ setopt complete_in_word
 setopt always_to_end
 
 # Completion menu selection and navigation
-zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' menu select
+zstyle ':completion:*' completions 1
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' ignore-case true
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*' # Allow substring matching
 bindkey -M menuselect '^o' accept-and-infer-next-history
 
 # Shift-Tab for reverse completion navigation

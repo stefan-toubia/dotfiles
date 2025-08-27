@@ -8,7 +8,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
-# Preserve fzf history search in both insert and normal mode
+# History search and navigation
 bindkey '^R' fzf-history-widget
 
 # Manual fzf cd widget (since Alt+C might be blocked by macOS)

@@ -1,9 +1,8 @@
 # Aliases organized by category
 
-# Editor shortcuts
+# Shortcuts
 alias code="cursor"
 alias zshrc="code $(readlink ~/.zshrc)"
-
 alias lg="lazygit"
 
 # File operations
@@ -13,8 +12,11 @@ alias lr='ls -R'
 
 # Utility aliases
 alias aliasf="alias | fzf"
+alias batj="bat --language json"
 alias copyprint="tee >(pbcopy)"
 alias copyprintr="tee >(tr -d '\\n' | pbcopy)"
+alias rgc="rg --color=always --heading --line-number"
+alias tre='tree -a -I ".git" --gitignore --prune'
 
 # Tmux shortcuts
 alias ta='tmux attach -t'
@@ -23,7 +25,6 @@ alias tns='tmux new-session -A -s'
 
 # Development tools
 alias display-swap="~/script/display_swap.sh"
-alias tigs="tig status"
 
 # fzf variations
 alias fzfns="fzf --no-sort"
@@ -35,3 +36,6 @@ alias fzfc='fzf | copyprintr'
 if [[ "$(uname)" == "Darwin" ]]; then
 	alias preview='open -a Preview'
 fi
+
+# Language-specific aliases
+alias gota="go test ./..."

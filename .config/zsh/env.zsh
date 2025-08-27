@@ -23,7 +23,7 @@ export HISTSIZE=50000
 export SAVEHIST=50000
 HIST_STAMPS="mm/dd/yyyy"
 
-# History options for improved productivity
+# History options
 setopt EXTENDED_HISTORY       # Record timestamp of commands
 setopt HIST_EXPIRE_DUPS_FIRST # Delete duplicates first when HISTFILE exceeds HISTSIZE
 setopt HIST_IGNORE_ALL_DUPS   # Ignore duplicated commands history list

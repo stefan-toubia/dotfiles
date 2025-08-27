@@ -6,4 +6,4 @@ os:
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+    pager: delta --dark --tabs 4 --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"

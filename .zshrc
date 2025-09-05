@@ -1,4 +1,4 @@
-for config in ~/.config/zsh/{env,functions,aliases,completions,tools,interactive}.zsh; do
+for config in ~/.config/zsh/{env,functions,aliases,tools,completions,interactive}.zsh; do
 	[[ -r "$config" ]] && source "$config"
 done
 

@@ -47,6 +47,9 @@ function setup_completions() {
 		echo "Downloading git completion..."
 		curl -o ~/.git-completion.zsh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 	fi
+
+	# GH completion
+	gh completion -s zsh >"$completion_dir/_gh"
 }
 
 # Install zsh plugins

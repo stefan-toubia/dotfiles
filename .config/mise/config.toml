@@ -1,4 +1,5 @@
 [tools]
+bat = "latest"
 biome = "2.1.1"
 claude = "latest"
 delta = "latest"

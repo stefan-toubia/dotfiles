@@ -12,6 +12,7 @@ alias lr='ls -R'
 
 # Utility aliases
 alias aliasf="alias | fzf"
+alias cat='bat --paging=never --plain'
 alias batj="bat --language json"
 alias copyprint="tee >(pbcopy)"
 alias copyprintr="tee >(tr -d '\\n' | pbcopy)"

@@ -17,6 +17,8 @@ export LESS='-x2 -RF'
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
+
 # History configuration
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=50000

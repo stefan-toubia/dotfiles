@@ -3,7 +3,13 @@
 # TODO: Brew is too slow, and it still seems to work without it. Remove?
 # brew (package manager - macOS only)
 if [[ "$(uname)" == "Darwin" ]]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
+	if [[ "$(uname -m)" == "arm64" ]]; then
+		# Apple Silicon Mac
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	else
+		# Intel Mac
+		eval "$(/usr/local/bin/brew shellenv)"
+	fi
 fi
 
 # mise (development environment manager)

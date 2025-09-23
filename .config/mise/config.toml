@@ -17,3 +17,7 @@ zoxide = "latest"
 
 [settings]
 experimental = true
+
+[tasks.restart-cursor]
+description = "Restart Cursor with updated mise environment"
+run = "{{env.REPOS}}/dotfiles/script/restart-cursor.sh"

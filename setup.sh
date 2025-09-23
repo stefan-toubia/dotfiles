@@ -21,7 +21,7 @@ function link() {
 		echo "linking ${target}"
 		ln -s "${source}" "${target}"
 	else
-		echo "${target} exists but is not a symlink"
+		echo -e "\033[33mWARN\033[0m ${target} exists but is not a symlink"
 	fi
 }
 

@@ -91,10 +91,10 @@ hide-dirty = 0
 tab-size = 2
 
 [pager]
-diff = delta
-log = delta
-reflog = delta
-show = delta
+diff = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
+log = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
+reflog = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
+show = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
 
 [delta]
 navigate = true
@@ -103,7 +103,6 @@ line-numbers = true
 syntax-theme = Dracula
 hyperlinks = true
 hyperlinks-file-link-format = "cursor://file/{path}:{line}"
-# side-by-side = true
 
 [interactive]
 diffFilter = delta --color-only

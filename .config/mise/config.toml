@@ -1,8 +1,12 @@
 [tools]
 bat = "latest"
 biome = "2.1.1"
+"cargo:procs" = "latest"
 claude = "latest"
 delta = "latest"
+dust = "latest"
+eza = "latest"
+fd = "latest"
 fzf = "latest"
 gh = "latest"
 go = "1.25"
@@ -12,12 +16,15 @@ lazygit = "latest"
 node = "22"
 pnpm = "10"
 ripgrep = "latest"
+rust = "latest"
 tmux = "latest"
 usage = "latest"
+yq = "latest"
 zoxide = "latest"
 
 [settings]
 experimental = true
+idiomatic_version_file_enable_tools = ["node"]
 
 [tasks.restart-cursor]
 description = "Restart Cursor with updated mise environment"

@@ -2,6 +2,7 @@
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="cursor --wait"
+export MISE_ENV_FILE=.env
 
 # Base PATH additions
 export PATH="$HOME/.bin:$PATH"

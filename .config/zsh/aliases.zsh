@@ -11,9 +11,8 @@ alias la='ls -la'
 alias ll='ls -l'
 alias lr='ls -R'
 alias lt='ls -T'
-alias ...='../..'
-alias ....='../../..'
-alias .....='../../../..'
+alias l1='eza -1'
+alias lsize='eza -l --no-permissions --no-user --no-time'
 
 # Utility aliases
 alias aliasf="alias | fzf"
@@ -24,6 +23,7 @@ alias copyprint="tee >(pbcopy)"
 alias copyprintr="tee >(tr -d '\\n' | pbcopy)"
 alias rgc="rg --color=always --heading --line-number"
 alias tre='tree -a -I ".git" --gitignore --prune'
+alias fmtiec='numfmt --to=iec'
 
 # Tmux shortcuts
 alias ta='tmux attach -t'

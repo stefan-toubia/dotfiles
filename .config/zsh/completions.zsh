@@ -17,7 +17,10 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' completions 1
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' ignore-case true
-zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*' # Allow substring matching
+# Case insensitive + substring matching
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' case-insensitive true
+zstyle ':completion:*' original true
 bindkey -M menuselect '^o' accept-and-infer-next-history
 
 # Shift-Tab for reverse completion navigation

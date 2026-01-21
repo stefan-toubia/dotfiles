@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu -o pipefail
 
+force=false
+
 repo="$(realpath $(dirname ${BASH_SOURCE[0]}))"
 echo "Setting up dotfiles from ${repo}"
 
@@ -13,8 +15,13 @@ function link() {
 		if [ "$(readlink "${target}")" == "${source}" ]; then
 			return
 		else
-			echo "${target} is a symlink to a different file"
-			return
+			if [ "${force}" == "true" ]; then
+				echo "forcing link ${target}"
+				ln -sf "${source}" "${target}"
+			else
+				echo "${target} is a symlink to a different file"
+				return
+			fi
 		fi
 	elif [ ! -e "${target}" ]; then
 		mkdir -p "$(dirname ${target})"
@@ -88,16 +95,16 @@ function link_dotfiles() {
 	echo "Linking dotfiles..."
 
 	# Link main dotfiles
-	link "${repo}/.editorconfig" ~/.editorconfig
-	link "${repo}/.gitconfig" ~/.gitconfig
-	link "${repo}/.zprofile" ~/.zprofile
-	link "${repo}/.zshrc" ~/.zshrc
+	link "${repo}/editorconfig" ~/.editorconfig
+	link "${repo}/gitconfig" ~/.gitconfig
+	link "${repo}/zprofile" ~/.zprofile
+	link "${repo}/zshrc" ~/.zshrc
 	link "${repo}/biome.json" ~/biome.json
 
 	# Link .config directory contents
 	mkdir -p ~/.config
-	for f in $(find ${repo}/.config -mindepth 1 -maxdepth 1); do
-		dst="${f/"${repo}"/$HOME}"
+	for f in $(find ${repo}/config -mindepth 1 -maxdepth 1); do
+		dst="$HOME/.config/$(basename "$f")"
 		link "${f}" "${dst}"
 	done
 
@@ -117,5 +124,18 @@ function main() {
 	link_dotfiles
 	echo "Setup complete!"
 }
+
+while [[ $# -gt 0 ]]; do
+	case $1 in
+	--force)
+		force=true
+		shift
+		;;
+	*)
+		echo "Unknown option: $1"
+		exit 1
+		;;
+	esac
+done
 
 main

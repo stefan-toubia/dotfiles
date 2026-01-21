@@ -2,6 +2,6 @@ pre-commit:
   parallel: true
   jobs:
     - run: shfmt -w {staged_files}
-      glob: "*.{sh,zsh,zshrc}"
+      glob: "*.{sh}"
     - run: biome check --fix {staged_files}
       glob: "*.{js,json,ts}"

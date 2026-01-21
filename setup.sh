@@ -32,10 +32,12 @@ function link() {
 	fi
 }
 
-function setup_starship() {
-	echo "Setting up starship..."
-	if ! command -v starship &>/dev/null; then
-		curl -sS https://starship.rs/install.sh | sh
+function setup_p10k() {
+	echo "Setting up powerlevel10k..."
+	local plugin_dir="$HOME/.config/zsh-plugins"
+	mkdir -p "$plugin_dir"
+	if [ ! -d "$plugin_dir/powerlevel10k" ]; then
+		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$plugin_dir/powerlevel10k"
 	fi
 }
 
@@ -95,11 +97,12 @@ function link_dotfiles() {
 	echo "Linking dotfiles..."
 
 	# Link main dotfiles
+	link "${repo}/biome.json" ~/biome.json
 	link "${repo}/editorconfig" ~/.editorconfig
 	link "${repo}/gitconfig" ~/.gitconfig
+	link "${repo}/p10k.zsh" ~/.p10k.zsh
 	link "${repo}/zprofile" ~/.zprofile
 	link "${repo}/zshrc" ~/.zshrc
-	link "${repo}/biome.json" ~/biome.json
 
 	# Link .config directory contents
 	mkdir -p ~/.config
@@ -117,7 +120,7 @@ function link_dotfiles() {
 }
 
 function main() {
-	setup_starship
+	setup_p10k
 	setup_completions
 	setup_zsh_plugins
 	setup_macos_config

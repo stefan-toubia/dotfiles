@@ -4,6 +4,7 @@
 alias code="cursor"
 alias zshrc="code $(readlink ~/.zshrc)"
 alias lg="lazygit"
+alias cm="chezmoi"
 
 # File operations
 alias ls=eza

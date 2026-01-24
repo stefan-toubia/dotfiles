@@ -6,29 +6,19 @@ force=false
 repo="$(realpath $(dirname ${BASH_SOURCE[0]}))"
 echo "Setting up dotfiles from ${repo}"
 
-# Utility function to create symlinks
-function link() {
-	local source="$1"
-	local target="$2"
+function setup_macos() {
+	defaults write -g InitialKeyRepeat -int 10
+	defaults write -g KeyRepeat -int 1
 
-	if [ -h "${target}" ]; then
-		if [ "$(readlink "${target}")" == "${source}" ]; then
-			return
-		else
-			if [ "${force}" == "true" ]; then
-				echo "forcing link ${target}"
-				ln -sf "${source}" "${target}"
-			else
-				echo "${target} is a symlink to a different file"
-				return
-			fi
-		fi
-	elif [ ! -e "${target}" ]; then
-		mkdir -p "$(dirname ${target})"
-		echo "linking ${target}"
-		ln -s "${source}" "${target}"
-	else
-		echo -e "\033[33mWARN\033[0m ${target} exists but is not a symlink"
+	echo "Configuring macOS settings..."
+
+	# Enable key repeating in VSCode and Cursor for vim extensions
+	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+	defaults write -app Cursor ApplePressAndHoldEnabled -bool false
+
+	if ! command -v brew &>/dev/null; then
+		echo "Installing Homebrew..."
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	fi
 }
 
@@ -79,52 +69,15 @@ function setup_zsh_plugins() {
 	fi
 }
 
-# Configure macOS-specific settings
-function setup_macos_config() {
-	if [[ "$(uname)" != "Darwin" ]]; then
-		return
-	fi
-
-	echo "Configuring macOS settings..."
-
-	# Enable key repeating in VSCode and Cursor for vim extensions
-	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-	defaults write -app Cursor ApplePressAndHoldEnabled -bool false
-}
-
-# Link all dotfiles and configurations
-function link_dotfiles() {
-	echo "Linking dotfiles..."
-
-	# Link main dotfiles
-	link "${repo}/biome.json" ~/biome.json
-	link "${repo}/editorconfig" ~/.editorconfig
-	link "${repo}/gitconfig" ~/.gitconfig
-	link "${repo}/p10k.zsh" ~/.p10k.zsh
-	link "${repo}/zprofile" ~/.zprofile
-	link "${repo}/zshrc" ~/.zshrc
-
-	# Link .config directory contents
-	mkdir -p ~/.config
-	for f in $(find ${repo}/config -mindepth 1 -maxdepth 1); do
-		dst="$HOME/.config/$(basename "$f")"
-		link "${f}" "${dst}"
-	done
-
-	# Link script directory contents
-	mkdir -p ~/script
-	for f in $(find ${repo}/script -type f); do
-		dst="${f/"${repo}"/$HOME}"
-		link "${f}" "${dst}"
-	done
-}
-
 function main() {
+	setup_macos
+	brew bundle
+	chezmoi init --source "$repo" --apply
+	mise install
 	setup_p10k
 	setup_completions
 	setup_zsh_plugins
-	setup_macos_config
-	link_dotfiles
+	(cd $repo && lefthook install)
 	echo "Setup complete!"
 }
 

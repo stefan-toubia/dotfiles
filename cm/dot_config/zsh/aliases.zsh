@@ -4,6 +4,7 @@
 alias code="cursor"
 alias zshrc="code $(readlink ~/.zshrc)"
 alias lg="lazygit"
+alias cm="chezmoi"
 
 # File operations
 alias ls=eza
@@ -31,7 +32,7 @@ alias tls='tmux ls'
 alias tns='tmux new-session -A -s'
 
 # Development tools
-alias display-swap="~/script/display_swap.sh"
+alias display-swap="~/scripts/display_swap.sh"
 
 # fzf variations
 alias fzfns="fzf --no-sort"

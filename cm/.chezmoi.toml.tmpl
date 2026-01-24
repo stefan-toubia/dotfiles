@@ -1,0 +1,13 @@
+sourceDir="~/src/dotfiles"
+
+#####
+#[diff]
+#  pager = "delta"
+
+[merge]
+command = "{{ .chezmoi.homeDir }}/scripts/chezmoi-merge.sh"
+args = [
+	"{{ "{{" }} .Destination {{ "}}" }}",
+	"{{ "{{" }} .Target {{ "}}" }}",
+	"{{ "{{" }} .Source {{ "}}" }}",
+]

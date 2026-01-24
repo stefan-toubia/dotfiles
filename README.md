@@ -1,14 +1,18 @@
 # dotfiles
 
-## Starship - prompt
+## Powerlevel10k
 
-<https://starship.rs/>
+<https://github.com/romkatv/powerlevel10k>
 
 ## Fonts
 
 <https://www.nerdfonts.com/>
 
 ## Tools
+
+### chezmoi - dotfile manager
+
+<https://www.chezmoi.io/>
 
 ### Mise - package manager
 

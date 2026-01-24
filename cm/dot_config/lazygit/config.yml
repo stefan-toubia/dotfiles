@@ -4,6 +4,6 @@ os:
   editAtLineAndWait: 'cursor --wait --goto {{filename}}:{{line}}'
   openDirInEditor: 'cursor {{dir}}'
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --tabs 4 --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  pagers:
+    - colorArg: always
+      pager: delta --dark --tabs 4 --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"

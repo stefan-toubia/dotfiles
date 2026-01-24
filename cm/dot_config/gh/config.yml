@@ -8,17 +8,17 @@ prompt: enabled
 pager:
 # Aliases allow you to create nicknames for gh commands
 aliases:
-    co: pr checkout
-    ps: pr status
-    pv: pr view
-    pvw: pr view -w
-    b: browse
-    prc: pr create
-    bc: '!gh browse -- $(git rev-parse HEAD)'
-    rcp: repo create --private --source=. --remote=origin --push
-    prch: pr checks
-    pr-review: "!~/script/git/gh-ls-pr.zsh review-pick"
-    prls: '!~/script/git/gh-ls-pr.zsh $@'
+  co: pr checkout
+  ps: pr status
+  pv: pr view
+  pvw: pr view -w
+  b: browse
+  prc: pr create
+  bc: "!gh browse -- $(git rev-parse HEAD)"
+  rcp: repo create --private --source=. --remote=origin --push
+  prch: pr checks
+  pr-review: "!~/scripts/git/gh-ls-pr.zsh review-pick"
+  prls: "!~/scripts/git/gh-ls-pr.zsh $@"
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.

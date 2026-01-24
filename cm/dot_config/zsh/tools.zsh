@@ -2,7 +2,7 @@
 
 # powerlevel10k (prompt)
 source "$HOME/.config/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme"
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+source ~/.p10k.zsh
 
 # TODO: Brew is too slow, and it still seems to work without it. Remove?
 # brew (package manager - macOS only)
@@ -16,7 +16,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	fi
 fi
 
-# mise (development environment manager)
+# mise (tool manager)
 eval "$(mise activate zsh)"
 
 # fzf (fuzzy finder)

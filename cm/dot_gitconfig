@@ -27,16 +27,16 @@ aa = add -A
 # List aliases with fzf and run selected alias.
 alias = "!git config --get-regexp '^alias\\.' | sort | fzf | awk '{ print $1 }' | cut -d "." -f 2 | xargs git"
 b = branch
-blr = "!~/script/git/branch-list-recent.sh | fzf --no-sort"
-blp = "!~/script/git/branch-list-recent.sh | fzf --no-sort --preview-window=right:70% --preview 'git ls --graph --decorate --color=always {}'"
-branch-last = "!~/script/git/branch-list-recent.sh | head -n 1"
+blr = "!~/scripts/git/branch-list-recent.sh | fzf --no-sort"
+blp = "!~/scripts/git/branch-list-recent.sh | fzf --no-sort --preview-window=right:70% --preview 'git ls --graph --decorate --color=always {}'"
+branch-last = "!~/scripts/git/branch-list-recent.sh | head -n 1"
 bn = rev-parse --abbrev-ref HEAD
 c = commit
 cm = commit -m
-cs = "!~/script/git/commit-select.sh"
+cs = "!~/scripts/git/commit-select.sh"
 cam = commit --amend
 can = commit --amend --no-edit
-check-clean-push = "!~/script/git/check-clean-push.sh"
+check-clean-push = "!~/scripts/git/check-clean-push.sh"
 co = checkout
 cor = "!git co $(git blp)"
 cob = checkout -b
@@ -50,7 +50,7 @@ dct = diff --cached --text
 dm = diff master
 fm = fetch origin main:main
 fork = "!git cob \"stefan.$(git bn)\""
-go-version = !~/script/git/go-dev-version.sh
+go-version = !~/scripts/git/go-dev-version.sh
 l = log
 ll = log --oneline --graph --decorate
 lol = log --oneline --graph --decorate

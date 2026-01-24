@@ -3,5 +3,6 @@ pre-commit:
   jobs:
     - run: shfmt -w {staged_files}
       glob: "*.{sh}"
+      stage_fixed: true
     - run: biome check --fix {staged_files}
       glob: "*.{js,json,ts}"

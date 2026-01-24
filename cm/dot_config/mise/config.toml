@@ -18,7 +18,7 @@ pnpm = "10"
 ripgrep = "latest"
 rust = "latest"
 tmux = "latest"
-usage = "latest"
+usage = "2.13.1"
 yq = "latest"
 zoxide = "latest"
 
@@ -28,7 +28,7 @@ idiomatic_version_file_enable_tools = ["node"]
 
 [tasks.restart-cursor]
 description = "Restart Cursor with updated mise environment"
-run = "{{env.REPOS}}/dotfiles/script/restart-cursor.sh"
+run = "{{env.REPOS}}/dotfiles/scripts/restart-cursor.sh"
 
 [env]
 _.file = ".env"

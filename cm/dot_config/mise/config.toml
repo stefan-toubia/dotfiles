@@ -1,6 +1,7 @@
 [tools]
+age = "latest"
 bat = "latest"
-biome = "2.1.1"
+biome = "2.3.12"
 "cargo:procs" = "latest"
 claude = "latest"
 delta = "latest"

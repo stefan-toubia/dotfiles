@@ -1,4 +1,6 @@
 brew "coreutils"
 brew "mise"
 brew "chezmoi"
+brew "ncdu"
+brew "scroll-reverser"
 vscode "vscodevim.vim"

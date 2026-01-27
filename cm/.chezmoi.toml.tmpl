@@ -1,4 +1,5 @@
-sourceDir="~/src/dotfiles"
+sourceDir = "~/src/dotfiles"
+encryption = "age"
 
 #####
 #[diff]
@@ -11,3 +12,7 @@ args = [
 	"{{ "{{" }} .Target {{ "}}" }}",
 	"{{ "{{" }} .Source {{ "}}" }}",
 ]
+
+[age]
+identity = "{{ .chezmoi.homeDir }}/.config/chezmoi/key.txt"
+recipient = "age15e0rfcwjhr0s34d5frmgj065ptzkr5m9aej55ulw4v0v70887gysug2g88"

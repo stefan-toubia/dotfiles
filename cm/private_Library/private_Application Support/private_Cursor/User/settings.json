@@ -1,0 +1,280 @@
+{
+	"[cue]": {
+		"editor.detectIndentation": true,
+		"editor.tabCompletion": "off"
+	},
+	"[dockercompose]": {
+		"editor.autoIndent": "advanced",
+		"editor.defaultFormatter": "redhat.vscode-yaml",
+		"editor.tabSize": 2
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"[go]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter"
+	},
+	"[sh.tpl]": {
+		"editor.formatOnSave": false
+	},
+	"[shellscript]": {
+		"editor.defaultFormatter": "mkhl.shfmt"
+	},
+	"[sql]": {
+		"editor.formatOnPaste": false,
+		"editor.formatOnSave": false,
+		"editor.formatOnSaveMode": "modificationsIfAvailable",
+		"editor.formatOnType": false
+	},
+	"[typescript]": {
+		"editor.suggest.showReferences": true
+	},
+	"[typescriptreact]": {
+		"editor.suggest.showReferences": true
+	},
+	"biome.enabled": "workspace",
+	"biome.requireConfiguration": true,
+	"biome.runFromTemporaryLocation": false,
+	"biome.suggestInstallingGlobally": false,
+	"claudeCode.preferredLocation": "panel",
+	"clojure.format.enable": true,
+	"cue.useLanguageServer": true,
+	"debug.javascript.autoAttachFilter": "disabled",
+	"diffEditor.codeLens": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"djlint.closeVoidTags": false,
+	"djlint.enableLinting": false,
+	"djlint.formatCss": true,
+	"djlint.formatJs": true,
+	"djlint.ignore": ["H021"],
+	"djlint.preserveBlankLines": true,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.codeLens": true,
+	"editor.detectIndentation": false,
+	"editor.foldingImportsByDefault": false,
+	"editor.fontFamily": "FiraMono Nerd Font",
+	"editor.fontLigatures": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"editor.formatOnType": true,
+	"editor.guides.bracketPairs": true,
+	"editor.hover.delay": 600,
+	"editor.insertSpaces": true,
+	"editor.maxTokenizationLineLength": 200000,
+	"editor.minimap.enabled": false,
+	"editor.quickSuggestions": {
+		"comments": "on",
+		"other": "on",
+		"strings": "on"
+	},
+	"editor.renderWhitespace": "all",
+	"editor.rulers": [80, 110],
+	"editor.semanticHighlighting.enabled": true,
+	"editor.stickyScroll.enabled": true,
+	"editor.suggestSelection": "first",
+	"editor.tabCompletion": "onlySnippets",
+	"editor.tabSize": 2,
+	"editor.wordWrap": "bounded",
+	"editor.wordWrapColumn": 110,
+	"errorLens.enabledDiagnosticLevels": [],
+	"eslint.debug": false,
+	"eslint.onIgnoredFiles": "warn",
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"explorer.excludeGitIgnore": true,
+	"explorer.sortOrder": "mixed",
+	"extensions.ignoreRecommendations": true,
+	"files.associations": {
+		"**/grafgen/**/testdata/**/*.txt": "txtar",
+		"*.gs": "javascript",
+		"*.gsql": "sql",
+		"*.sh.tpl": "goshell",
+		"*.tmpl": "go-template",
+		"*.toml.tpl": "toml",
+		"*.tpl": "go-template"
+	},
+	"files.autoSave": "off",
+	"files.exclude": {
+		"**/*.class": true,
+		"**/.DS_Store": true,
+		"**/.cache": true,
+		"**/.calva/**": true,
+		"**/.classpath": true,
+		"**/.cpcache": true,
+		"**/.eastwood": true,
+		"**/.factorypath": true,
+		"**/.git": true,
+		"**/.hg": true,
+		"**/.nrepl-port": true,
+		"**/.pnpm-debug.log": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.svn": true,
+		"**/CVS": true,
+		"**/classes/**": true,
+		"**/clj/cache/*": true,
+		"**/compiled/**": true,
+		"**/compiled_resources/**": true,
+		"**/dist/**": true,
+		"**/node_modules": true,
+		"**/target/cache/**": true,
+		"**/target/uberjar/classes/**": true,
+		"**/tsconfig.tsbuildinfo": true,
+		"**/yarn-error.log": true,
+		".lein-repl-history": true
+	},
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"files.watcherExclude": {
+		"**/node_modules/**": true,
+		"**/target/**": true
+	},
+	"git.autoRepositoryDetection": "openEditors",
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"git.enableSmartCommit": true,
+	"git.mergeEditor": true,
+	"git.openRepositoryInParentFolders": "never",
+	"githubPullRequests.fileListLayout": "tree",
+	"githubPullRequests.pullBranch": "never",
+	"githubPullRequests.terminalLinksHandler": "github",
+	"gitlens.codeLens.authors.enabled": false,
+	"gitlens.codeLens.recentChange.enabled": false,
+	"gitlens.graph.statusBar.enabled": false,
+	"gitlens.launchpad.indicator.enabled": false,
+	"gitlens.liveshare.enabled": false,
+	"gitlens.menus": {
+		"editor": {
+			"blame": false,
+			"clipboard": true,
+			"compare": true,
+			"history": false,
+			"remote": false
+		},
+		"editorGroup": {
+			"blame": false,
+			"compare": false
+		},
+		"editorTab": {
+			"clipboard": true,
+			"compare": true,
+			"history": true,
+			"remote": true
+		},
+		"explorer": {
+			"clipboard": true,
+			"compare": true,
+			"history": true,
+			"remote": true
+		},
+		"scm": {
+			"authors": true
+		},
+		"scmGroup": {
+			"compare": true,
+			"openClose": true,
+			"stash": true
+		},
+		"scmGroupInline": {
+			"stash": true
+		},
+		"scmItem": {
+			"clipboard": true,
+			"compare": true,
+			"history": true,
+			"remote": false,
+			"stash": true
+		}
+	},
+	"gitlens.sortBranchesBy": "date:desc",
+	"gitlens.views.branches.files.compact": false,
+	"gitlens.views.repositories.branches.layout": "list",
+	"go.addTags": {
+		"options": ""
+	},
+	"go.coverOnTestPackage": false,
+	"go.editorContextMenuCommands": {
+		"addImport": true,
+		"addTags": true,
+		"benchmarkAtCursor": false,
+		"debugTestAtCursor": true,
+		"fillStruct": false,
+		"generateTestForFile": false,
+		"generateTestForFunction": true,
+		"generateTestForPackage": false,
+		"playground": true,
+		"removeTags": false,
+		"testAtCursor": true,
+		"testCoverage": true,
+		"testFile": false,
+		"testPackage": false,
+		"toggleTestFile": true
+	},
+	"go.enableCodeLens": {},
+	"go.testExplorer.packageDisplayMode": "nested",
+	"go.testOnSave": false,
+	"go.toolsManagement.autoUpdate": true,
+	"go.useLanguageServer": true,
+	"gopls": {
+		"formatting.gofumpt": true,
+		"ui.completion.usePlaceholders": true,
+		"ui.semanticTokens": true
+	},
+	"javascript.referencesCodeLens.enabled": true,
+	"javascript.referencesCodeLens.showOnAllFunctions": true,
+	"liveshare.showInStatusBar": "whileCollaborating",
+	"markdown-preview-enhanced.codeBlockTheme": "atom-material.css",
+	"markdown-preview-enhanced.previewTheme": "github-dark.css",
+	"markdown-preview-enhanced.revealjsTheme": "moon.css",
+	"python.languageServer": "None",
+	"redhat.telemetry.enabled": false,
+	"scm.defaultViewMode": "tree",
+	"search.followSymlinks": false,
+	"search.quickOpen.history.filterSortOrder": "recency",
+	"search.quickOpen.includeHistory": true,
+	"security.promptForLocalFileProtocolHandling": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"stylelint.reportNeedlessDisables": true,
+	"terminal.integrated.allowedLinkSchemes": [
+		"file",
+		"http",
+		"https",
+		"mailto",
+		"vscode",
+		"vscode-insiders",
+		"cursor"
+	],
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.persistentSessionReviveProcess": "never",
+	"terminal.integrated.scrollback": 10000,
+	"terminal.integrated.shellIntegration.enabled": true,
+	"testing.automaticallyOpenTestResults": "neverOpen",
+	"timeline.pageSize": 0,
+	"trailing-spaces.showStatusBarMessage": false,
+	"typescript.implementationsCodeLens.enabled": false,
+	"typescript.referencesCodeLens.enabled": false,
+	"typescript.referencesCodeLens.showOnAllFunctions": false,
+	"typescript.tsserver.log": "off",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"window.commandCenter": true,
+	"workbench.colorCustomizations": {
+		"editor.lineHighlightBackground": "#2e2e2e"
+	},
+	"workbench.colorTheme": "Default Dark Modern",
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"workbench.editor.labelFormat": "short",
+	"workbench.editor.pinnedTabSizing": "shrink",
+	"workbench.editor.wrapTabs": true,
+	"workbench.editorAssociations": {
+		"git-rebase-todo": "default"
+	},
+	"workbench.settings.editor": "json",
+	"workbench.startupEditor": "none"
+}

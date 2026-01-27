@@ -1,0 +1,102 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	{
+		"key": "ctrl+alt+cmd+space",
+		"command": "workbench.action.toggleMaximizedPanel"
+	},
+	{
+		"key": "alt+`",
+		"command": "workbench.action.terminal.focusNext"
+	},
+	{
+		"key": "ctrl+alt+cmd+enter",
+		"command": "calva.evalCurrentFormInREPLWindow",
+		"when": "calva:connected"
+	},
+	{
+		"key": "ctrl+alt+c ctrl+alt+e",
+		"command": "-calva.evalCurrentFormInREPLWindow",
+		"when": "calva:connected"
+	},
+	{
+		"key": "shift+alt+u",
+		"command": "workbench.output.action.clearOutput"
+	},
+	{
+		"key": "ctrl+g",
+		"command": "-workbench.action.gotoLine"
+	},
+	{
+		"key": "ctrl+g",
+		"command": "workbench.action.gotoLine"
+	},
+	{
+		"key": "alt+g",
+		"command": "workbench.action.toggleEditorWidths"
+	},
+	{
+		"key": "shift+cmd+c",
+		"command": "-workbench.action.terminal.openNativeConsole",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "cmd+w",
+		"command": "-workbench.action.closeWindow",
+		"when": "!editorIsOpen && !multipleEditorGroups"
+	},
+	{
+		"key": "ctrl+`",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active && !terminalFocus"
+	},
+	{
+		"key": "ctrl+`",
+		"command": "-workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+	{
+		"key": "ctrl+`",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "terminalFocus || panelFocus"
+	},
+	{
+		"key": "ctrl+down",
+		"command": "multiCommand.down1LineKeepCursor"
+	},
+	{
+		"key": "ctrl+up",
+		"command": "multiCommand.up1LineKeepCursor"
+	},
+	{
+		"key": "ctrl+alt+c ctrl+alt+t",
+		"command": "go.test.cursor",
+		"when": "editorLangId == 'go'"
+	},
+	{
+		"key": "ctrl+alt+c t",
+		"command": "go.test.package",
+		"when": "editorLangId == 'go'"
+	},
+	{
+		"key": "cmd+i",
+		"command": "composerMode.agent"
+	},
+	{
+		"key": "shift+cmd+k",
+		"command": "workbench.action.terminal.clear",
+		"when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+	},
+	{
+		"key": "cmd+k",
+		"command": "-workbench.action.terminal.clear",
+		"when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+	},
+	{
+		"key": "shift+enter",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "\\\r\n"
+		},
+		"when": "terminalFocus"
+	}
+]

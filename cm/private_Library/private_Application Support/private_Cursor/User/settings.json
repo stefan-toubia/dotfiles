@@ -17,7 +17,12 @@
 		}
 	},
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.black-formatter"
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit",
+			"source.organizeImports": "explicit"
+		}
 	},
 	"[sh.tpl]": {
 		"editor.formatOnSave": false
@@ -57,7 +62,7 @@
 	"editor.codeLens": true,
 	"editor.detectIndentation": false,
 	"editor.foldingImportsByDefault": false,
-	"editor.fontFamily": "FiraMono Nerd Font",
+	"editor.fontFamily": "MesloLGS NF",
 	"editor.fontLigatures": true,
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
@@ -116,6 +121,7 @@
 		"**/.project": true,
 		"**/.settings": true,
 		"**/.svn": true,
+		"**/.venv": true,
 		"**/CVS": true,
 		"**/classes/**": true,
 		"**/clj/cache/*": true,
@@ -276,5 +282,12 @@
 		"git-rebase-todo": "default"
 	},
 	"workbench.settings.editor": "json",
-	"workbench.startupEditor": "none"
+	"workbench.startupEditor": "none",
+	"git.replaceTagsWhenPull": true,
+	"git.blame.editorDecoration.enabled": true,
+	"gitlens.currentLine.enabled": false,
+	"cursor.cpp.enablePartialAccepts": true,
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	}
 }

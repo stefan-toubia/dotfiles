@@ -1,16 +1,16 @@
 [core]
 untrackedcache = true
-fsmonitor = true
+fsmonitor = false
 tabwidth = 2
 [user]
 name = Stefan Toubia
 email = stefan.toubia@gmail.com
 [credential "https://github.com"]
 helper =
-helper = !/usr/local/bin/gh auth git-credential
+helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 helper =
-helper = !/usr/local/bin/gh auth git-credential
+helper = !gh auth git-credential
 [diff]
 tool = vimdiff
 [branch]
@@ -91,10 +91,10 @@ hide-dirty = 0
 tab-size = 2
 
 [pager]
-diff = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
-log = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
-reflog = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
-show = [ "${COLUMNS}" -ge 200 ] && delta --side-by-side || delta
+diff = delta-pager
+log = delta-pager
+reflog = delta-pager
+show = delta-pager
 
 [delta]
 navigate = true

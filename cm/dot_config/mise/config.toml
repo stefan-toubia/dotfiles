@@ -1,16 +1,18 @@
 [tools]
 age = "latest"
+ast-grep = "latest"
 bat = "latest"
 biome = "2.3.12"
 "cargo:procs" = "latest"
 claude = "latest"
+codex = "latest"
 delta = "latest"
 dust = "latest"
 eza = "latest"
 fd = "latest"
 fzf = "latest"
 gh = "latest"
-go = "1.25"
+go = "1.26"
 "go:github.com/cespare/reflex" = "latest"
 jq = "latest"
 lazygit = "latest"
@@ -33,3 +35,4 @@ run = "{{env.REPOS}}/dotfiles/scripts/restart-cursor.sh"
 
 [env]
 _.file = ".env"
+_.path = ["~/tools/bin"]

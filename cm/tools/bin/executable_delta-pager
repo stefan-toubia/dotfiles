@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e -o pipefail
+# Used as git pager to enable side-by-side when terminal is wide enough
+
+if [ "${COLUMNS:-0}" -ge 200 ]; then
+	delta --side-by-side "$@"
+else
+	delta "$@"
+fi

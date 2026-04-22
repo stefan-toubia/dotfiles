@@ -2,5 +2,7 @@
 .env
 .env.*
 .vscode
+.clj-kondo
+.lsp
 **/*.local.*
 node_modules

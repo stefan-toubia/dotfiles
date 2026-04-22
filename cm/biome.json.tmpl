@@ -33,7 +33,10 @@
 	},
 	"overrides": [
 		{
-			"includes": [".vscode/**", "**/Cursor/**/settings.json"],
+			"includes": [
+				"**/{.vscode,dot_vscode}/**",
+				"**/{Cursor,private_Cursor}/**/settings.json"
+			],
 			"json": {
 				"parser": {
 					"allowComments": true,

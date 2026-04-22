@@ -1,7 +1,7 @@
 # Completion system configuration
 
 # Load completion system
-fpath=($HOME/.zsh-complete $fpath)
+fpath=($HOME/.zfunc $HOME/.zsh-complete $fpath)
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
 

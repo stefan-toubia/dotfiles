@@ -5,6 +5,7 @@ alias code="cursor"
 zshrc() { code "$(readlink -f ~/.zshrc)"; }
 alias lg="lazygit"
 alias cm="chezmoi"
+alias cmw="chezmoi --config ~/.config/chezmoi/private.toml --persistent-state ~/.config/chezmoi/private-state.boltdb"
 
 # File operations
 alias ls=eza
@@ -58,3 +59,11 @@ fi
 # Language-specific aliases
 alias gota="go test ./..."
 alias gota1="go test -count 1 ./..."
+
+# Postgres (brew postgresql@$PG_VERSION)
+alias pgconf='code $HOMEBREW_PREFIX/var/postgresql@$PG_VERSION/postgresql.conf'
+alias pglog='tail -F $PGDATA/log/postgresql.log'
+alias pgreload='pg_ctl reload'
+alias pgrestart='brew services restart postgresql@$PG_VERSION'
+alias pgstart='brew services start postgresql@$PG_VERSION'
+alias pgstop='brew services stop postgresql@$PG_VERSION'

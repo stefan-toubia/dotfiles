@@ -23,6 +23,10 @@ export LESS='-x2 -RF'
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
+# Postgres client defaults (PATH/PGDATA set in tools.zsh — needs HOMEBREW_PREFIX)
+export PGDATABASE=postgres
+export PG_COLOR=auto
+
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 
 # History configuration

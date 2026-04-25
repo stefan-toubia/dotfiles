@@ -16,6 +16,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	fi
 fi
 
+# Postgres (brew-installed postgresql@17)
+export PATH="$HOMEBREW_PREFIX/opt/postgresql@17/bin:$PATH"
+export PGDATA="$HOMEBREW_PREFIX/var/postgresql@17"
+
 # mise (tool manager)
 eval "$(mise activate zsh)"
 

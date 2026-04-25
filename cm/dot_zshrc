@@ -15,4 +15,4 @@ for plugin in $plugins; do
 done
 
 source_if ~/.env
-source_if ~/.work.zshrc
+source_if ~/.config/zsh-work/work.zshrc

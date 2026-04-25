@@ -2,7 +2,7 @@
 
 # Shortcuts
 alias code="cursor"
-alias zshrc="code $(readlink ~/.zshrc)"
+zshrc() { code "$(readlink -f ~/.zshrc)"; }
 alias lg="lazygit"
 alias cm="chezmoi"
 
@@ -23,6 +23,9 @@ alias copyprint="tee >(pbcopy)"
 alias copyprintr="tee >(tr -d '\\n' | pbcopy)"
 alias rgc="rg --color=always --heading --line-number"
 alias tre='tree -a -I ".git" --gitignore --prune'
+alias fd1='fd -d1'
+alias fda='fd -IH'
+alias fda1='fd -IH -d1'
 alias fmtiec='numfmt --to=iec'
 
 # Bat aliases

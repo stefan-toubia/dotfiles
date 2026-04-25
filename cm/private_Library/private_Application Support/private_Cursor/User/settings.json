@@ -17,12 +17,12 @@
 		}
 	},
 	"[python]": {
-		"editor.defaultFormatter": "charliermarsh.ruff",
-		"editor.formatOnSave": true,
-		"editor.codeActionsOnSave": {
-			"source.fixAll": "explicit",
-			"source.organizeImports": "explicit"
-		}
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
 	},
 	"[sh.tpl]": {
 		"editor.formatOnSave": false
@@ -144,6 +144,7 @@
 	},
 	"git.autoRepositoryDetection": "openEditors",
 	"git.autofetch": true,
+	// "git.autofetchPeriod": 180,
 	"git.confirmSync": false,
 	"git.enableSmartCommit": true,
 	"git.mergeEditor": true,
@@ -282,12 +283,15 @@
 		"git-rebase-todo": "default"
 	},
 	"workbench.settings.editor": "json",
-	"workbench.startupEditor": "none",
-	"git.replaceTagsWhenPull": true,
-	"git.blame.editorDecoration.enabled": true,
-	"gitlens.currentLine.enabled": false,
-	"cursor.cpp.enablePartialAccepts": true,
-	"[markdown]": {
-		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-	}
+  "workbench.startupEditor": "none",
+  "git.replaceTagsWhenPull": true,
+  "git.blame.editorDecoration.enabled": true,
+  "gitlens.currentLine.enabled": false,
+  "cursor.cpp.enablePartialAccepts": true,
+  "[java]": {
+    "editor.formatOnSave": false
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  }
 }

@@ -66,7 +66,7 @@ function setup_zsh_plugins() {
 
 function main() {
 	setup_macos
-	brew bundle
+	brew bundle --file="$repo/Brewfile"
 	chezmoi init --source "$repo" --apply
 	mise install
 	setup_p10k

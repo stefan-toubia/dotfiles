@@ -1,6 +1,6 @@
 [core]
 untrackedcache = true
-fsmonitor = false
+	fsmonitor = false
 tabwidth = 2
 [user]
 name = Stefan Toubia

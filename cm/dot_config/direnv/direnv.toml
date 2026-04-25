@@ -1,0 +1,5 @@
+# This file's existence is required for direnv 2.37.1 to honor the
+# DIRENV_LOG_FORMAT env variable (the env-var read is nested inside the
+# toml-loading branch — see direnv internal/cmd/config.go in v2.37.1).
+# Setting log_format here directly does NOT silence output because
+# `log_format = ""` is treated as "unset" in that version.

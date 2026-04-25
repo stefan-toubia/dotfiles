@@ -24,3 +24,6 @@ source <(fzf --zsh)
 
 # zoxide (smart directory navigation)
 eval "$(zoxide init zsh)"
+
+# direnv (per-directory env vars; required for git worktree env rewrites)
+eval "$(direnv hook zsh)"

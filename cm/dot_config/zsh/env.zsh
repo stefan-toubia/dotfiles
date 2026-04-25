@@ -4,6 +4,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="cursor --wait"
 export MISE_ENV_FILE=.env
 
+# Silence direnv's "loading .envrc" / "export" output (avoids p10k instant-prompt warnings).
+# In direnv 2.37.1 this env var is only honored if ~/.config/direnv/direnv.toml exists,
+# so we ship an empty one alongside.
+export DIRENV_LOG_FORMAT=""
+
 # Base PATH additions
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
